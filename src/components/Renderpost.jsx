@@ -37,7 +37,7 @@ const Renderpost = () => {
         <>
             {
                 postData.map((post) => (
-                    <Card key={post.id} sx={{ maxWidth: '100%' }}>
+                    <Card key={post.id} sx={{ maxWidth: '100%', mb: 2 }}>
                         <CardHeader
                             avatar={
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
@@ -58,7 +58,7 @@ const Renderpost = () => {
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing>
-                            <IconButton aria-label="add to favorites">
+                            <IconButton sx={{ color: '#f13353' }} aria-label="add to favorites">
                                 <FavoriteIcon />
                             </IconButton>
                             {post.likes}
