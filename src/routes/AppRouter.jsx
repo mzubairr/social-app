@@ -29,10 +29,9 @@ const Approuter = () => {
 
   return (
     <>
-      <Navbar />
+      {user && <Navbar />}
 
       <Routes>
-        <Route path="/about" element={<About />} />
         {user ? (
           <>
             <Route path="/" element={<Home />} />
@@ -42,12 +41,13 @@ const Approuter = () => {
           <>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<Navigate to="/login" />} />
           </>
         )}
-        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
 
-      {/* <Footer /> */}
+      {/* {user && <Footer />} */}
     </>
   )
 }
